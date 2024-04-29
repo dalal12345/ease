@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Payment Rule/Process</title>
+</head>
+<body>
+<div class="container">
+    <h1>Create new File</h1>
+    <form action="/admin/<%=paymentID%>/create_payment_process" method="POST">
+        <input type="text" name="parent_payment" value="<%=paymentID%>"  class="parentLinker">
+        <br>
+        <br>
+        <input type="text" name="ruleName" placeholder="Enter Payment rule">
+        <br>
+        <br>
+        <button>Create New Payment</button>
+    </form>
+
+    <h1>All payments rule....</h1>
+    <%allPaymentProcess.map(paymentRule =>{%>
+        <h3><%=paymentRule.ruleName%></h3>
+    <%})%>
+</div>
+
+</body>
+</html>

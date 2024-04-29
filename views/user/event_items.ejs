@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Event Items</title>
+</head>
+<body>
+<div class="container">
+<!--    Files sections.....-->
+    <h1>All Created Files</h1>
+    <%allFiles.map(file=>{%>
+    <div class="fileItem">
+        <h1><%=file.title%></h1>
+        <a href="/<%=file.link%>">
+            Download Link
+        </a>
+    </div>
+
+    <%})%>
+
+    <!--    Files sections.....-->
+
+<!--    Rules section.....-->
+    <h1>All Created Rules</h1>
+    <%allRules.map(rule=>{%>
+    <div class="ruleName">
+        <h1><%=rule.ruleName%></h1>
+    </div>
+
+    <%})%>
+    <!--    Rules section.....-->
+
+<!--    Payment section.....-->
+    <h1>All Payment Method</h1>
+    <%allPayments.map(payment=>{%>
+    <div class="paymentMethod">
+        <a href="/user/<%=payment._id%>/payment_process">
+            <h1><%=payment.agent%></h1>
+            <h2><%=payment.amount%></h2>
+        </a>
+
+    </div>
+
+    <%})%>
+    <!--    Payment section.....-->
+
+</div>
+
+</body>
+</html>

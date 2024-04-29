@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All events and questions....</title>
+</head>
+<body>
+<div class="container">
+<!--    Events section-->
+    <h1>All Created events X</h1>
+    <%allEvents.map(event=>{%>
+    <a href="/user/<%=event._id%>/event_item">
+        <h1><%=event.event_name%></h1>
+    </a>
+    <%})%>
+    <!--    Events section-->
+
+    <!--    Question section started...-->
+    <h1>Asked Questions...</h1>
+    <%allQuestions.map(question=>{%>
+    <h1><%=question.name%></h1>
+    <%})%>
+
+
+    <!--    Question section stopped.....-->
+
+
+</div>
+
+</body>
+</html>

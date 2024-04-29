@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Fest</title>
+</head>
+<body>
+<div class="container">
+    <%if(allFestivals.length==0){%>
+        <h1>There is no festivals</h1>
+    <%} else {%>
+    <h1>My Fests</h1>
+    <%allFestivals.map(fest => {%>
+    <a href="/user/<%=fest._id%>/events_questions">
+        <h1><%=fest.fest_name%></h1>
+        <h1><%=fest.startDate%></h1>
+        <h1><%=fest.fest_description%></h1>
+    </a>
+    <%})}%>
+</div>
+
+</body>
+</html>

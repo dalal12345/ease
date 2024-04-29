@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Event</title>
+</head>
+<body>
+<div class="container">
+<!--    Events section is started.....-->
+    <h1>Create new Events</h1>
+    <form action="/admin/<%=festID%>/create_event" method="POST">
+        <input  name="parent_fest" value="<%=festID%>"  class="parentLinker">
+        <br>
+        <br>
+        <input type="text" name="event_name" placeholder="Enter Events name">
+        <br>
+        <br>
+        <textarea  name="event_description" rows="5" cols="50">Event description...</textarea>
+        <button type="submit">Create Event</button>
+    </form>
+   <%if(allEvents.length==0){%>
+    <h1>No events found</h1>
+    <%} else {%>
+    <h1>All Created events X</h1>
+    <%allEvents.map(event=>{%>
+    <a href="/admin/<%=event._id%>/create_event_item">
+        <h1><%=event.event_name%></h1>
+    </a>
+    <%})}%>
+
+    <!--    Question section started...-->
+
+    <h1>Create new Question</h1>
+    <form action="/admin/<%=festID%>/create_question" method="POST">
+        <input  name="parent_fest" value="<%=festID%>"  class="parentLinker">
+        <br>
+        <br>
+        <input type="text" name="name" placeholder="Your question">
+        <br>
+        <br>
+        <input type="text" name="answer">
+        <br>
+        <br>
+        <button type="submit">Create Event</button>
+    </form>
+    <%if(allQuestions.length==0){%>
+        <h1>No Question found</h1>
+    <%} else {%>
+    <h1>All Created Questions...</h1>
+    <%allQuestions.map(question=>{%>
+    <h1>Question : <%=question.name%></h1>
+    <%if(question.answer==''){%>
+    <h2>Not answered yet</h2>
+    <%} else {%>
+    <h2>Answer : <%=question.answer%></h2>
+    <%}})}%>
+
+
+    <!--    Question section stopped.....-->
+
+
+</div>
+
+</body>
+</html>

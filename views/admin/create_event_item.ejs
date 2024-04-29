@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Event Items</title>
+</head>
+<body>
+<div class="container">
+    <h1>Create new File</h1>
+    <form action="/admin/<%=eventID%>/create_file" method="POST">
+        <input  name="parent_event" value="<%=eventID%>"  class="parentLinker">
+        <br>
+        <br>
+        <input type="text" name="title" placeholder="Enter Events name">
+        <br>
+        <br>
+        <input type="text" name="link">
+        <br>
+        <br>
+        <button type="submit">Create File</button>
+    </form>
+    <h1>All Created Files</h1>
+    <%allFiles.map(file=>{%>
+    <div class="fileItem">
+        <h1><%=file.title%></h1>
+        <a href="/<%=file.link%>">
+           Download Link
+        </a>
+    </div>
+
+    <%})%>
+
+    //File is end
+
+    <h1>Create new Rule</h1>
+    <form action="/admin/<%=eventID%>/create_rule" method="POST">
+        <input  name="parent_event" value="<%=eventID%>"  class="parentLinker">
+        <br>
+        <br>
+        <input type="text" name="ruleName" placeholder="Enter Rules name">
+        <br>
+        <br>
+        <button type="submit">Create File</button>
+    </form>
+    <h1>All Created Rules</h1>
+    <%allRules.map(rule=>{%>
+    <div class="ruleName">
+        <h1><%=rule.ruleName%></h1>
+    </div>
+
+    <%})%>
+
+    //Rule is end
+
+
+
+
+    //File is end
+
+    <h1>Create new Payment</h1>
+    <form action="/admin/<%=eventID%>/create_payment" method="POST">
+        <input  name="parent_event" value="<%=eventID%>"  class="parentLinker">
+        <br>
+        <br>
+        <label for="agent"></label>
+        <input type="text" name="agent" placeholder="Enter Payment Agent">
+        <br>
+        <br>
+        <input type="number" name="amount" t>
+        <br>
+        <br>
+        <button type="submit">Cree New Payment</button>
+    </form>
+    <h1>All Payment Method</h1>
+    <%allPayments.map(payment=>{%>
+    <div class="paymentMethod">
+        <a href="/admin/<%=payment._id%>/create_payment_process">
+            <h1><%=payment.agent%></h1>
+            <h2><%=payment.amount%></h2>
+        </a>
+
+    </div>
+
+    <%})%>
+
+    //Rule is end
+
+
+
+    //End div...
+
+</div>
+
+</body>
+</html>

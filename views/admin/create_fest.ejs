@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Fest</title>
+</head>
+<body>
+<div class="container">
+    <h1>Create new festivals</h1>
+    <form action="/create_fest" method="POST">
+        <input type="text" name="fest_name" placeholder="Enter festivals name">
+        <br>
+        <br>
+        <input type="date" name="startDate">
+        <br>
+        <br>
+        <input type="text" name="mapLink" placeholder="Enter the link of the map....">
+        <br>
+        <br>
+        <textarea  name="fest_description" rows="5" cols="50">
+            Edit description...
+        </textarea>
+        <button type="submit">Create</button>
+    </form>
+    <%if(allFestivals.length==0){%>
+        <h1>There is no festivals</h1>
+    <%} else {%>
+    <h1>My Fests</h1>
+    <%allFestivals.map(fest => {%>
+        <a href="/admin/<%=fest._id%>/create_event">
+            <h1><%=fest.fest_name%></h1>
+        </a>
+    <%})}%>
+</div>
+
+</body>
+</html>
